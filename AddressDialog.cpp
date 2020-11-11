@@ -18,7 +18,7 @@ END_EVENT_TABLE()
 
 AddressDialog::AddressDialog(wxWindow *parent)
   : wxDialog(parent, -1, wxString::FromAscii("Enter Load Address"), wxDefaultPosition,
-	     wxDefaultSize, wxDEFAULT_DIALOG_STYLE | wxDIALOG_MODAL)
+	     wxDefaultSize, wxDEFAULT_DIALOG_STYLE)
 {
   m_value = wxString::FromAscii("");
   wxString message = wxString::FromAscii("At what address do you want to load the image?");

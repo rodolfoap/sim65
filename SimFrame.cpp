@@ -15,7 +15,7 @@
 #include "Acia6551.h"
 #include "Acia6551Frame.h"
 
-#define NORESIZE_FRAME (wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxRESIZE_BOX | wxMAXIMIZE_BOX))
+#define NORESIZE_FRAME (wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX | wxMAXIMIZE_BOX))
 
 enum
   {
@@ -380,7 +380,7 @@ void SimFrame::OnLoadBinary (wxCommandEvent& WXUNUSED(event))
 				       wxString::FromAscii(""),
 				       wxString::FromAscii(""),
 				       wxString::FromAscii("*.*"),
-				       wxOPEN | wxCHANGE_DIR);
+				       wxFD_OPEN | wxFD_CHANGE_DIR);
 
   int result = fd->ShowModal();
 
@@ -518,7 +518,7 @@ void SimFrame::OnLoadSRecords (wxCommandEvent& WXUNUSED(event))
 					wxString::FromAscii(""),
 					wxString::FromAscii(""),
 					wxString::FromAscii("*.*"),
-				       wxOPEN | wxCHANGE_DIR);
+				       wxFD_OPEN | wxFD_CHANGE_DIR);
 
   int result = fd->ShowModal();
 

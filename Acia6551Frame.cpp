@@ -11,7 +11,7 @@ BEGIN_EVENT_TABLE(Acia6551Frame, wxFrame)
 EVT_CLOSE(Acia6551Frame::OnClose)
 END_EVENT_TABLE()
 
-#define NORESIZE_FRAME (wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxRESIZE_BOX | wxMAXIMIZE_BOX))
+#define NORESIZE_FRAME (wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX))
 
 Acia6551Frame::~Acia6551Frame ()
 {
@@ -86,7 +86,7 @@ Acia6551Frame::Acia6551Frame (const wxString& title, Acia6551 * acia)
   reg_sizer->Add(txdwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
   reg_sizer->Add(rxdwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
 
-  term = new wxTextCtrl(panel, -1, wxString::FromAscii(""), wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_LINEWRAP | wxTE_READONLY);
+  term = new wxTextCtrl(panel, -1, wxString::FromAscii(""), wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_CHARWRAP | wxTE_READONLY);
   term->SetFont(font);
   term->SetDefaultStyle(attr);
   term->SetSize(40 * term->GetCharWidth(), 2 * term->GetCharHeight());
